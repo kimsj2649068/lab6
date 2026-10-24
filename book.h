@@ -1,6 +1,6 @@
 #pragma once //헤더가드
-#include <iostream>
-#include <string>
+#include <iostream> //std::cout, std::cin 쓰게 해준
+#include <string> //std::string 쓰게 해준다
 
 namespace kimsj2649068
 {
@@ -9,7 +9,7 @@ namespace kimsj2649068
     private:
         int id; //id: 1~1000
         int price; //price: 0~50000 won
-        std::string title;
+        std::string title; // 데이터형이 std::string이다.
         void testID()
         {
             if ((id < 1) || (id > 1000)) 
@@ -27,11 +27,11 @@ namespace kimsj2649068
             }
         };
     public: 
-          book(const std::string& t = "no title yet", int d = 1, int p = 0) : title{t}, id{d}, price{p}
+          book(const std::string& t = "no title yet", int d = 1, int p = 0) : title{t}, id{d}, price{p} 
             { 
               testID();
               testPrice(); 
-            }
+            } //매개변수 const 이용_ 참조 이용했으니깡
 
             void input()
             {
@@ -79,9 +79,11 @@ namespace kimsj2649068
              { 
                 std::cout << "Enter book title: ";
                 std::getline(is >> std::ws, b.title);
+
                 std::cout << "Enter book id: ";
                 is >> b.id; 
                 b.testID(); 
+                
                 std::cout << "Enter book price: ";
                 is >> b.price; 
                 b.testPrice(); 

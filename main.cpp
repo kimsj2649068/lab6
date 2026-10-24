@@ -21,12 +21,15 @@ int main()
     a[1].setTitle("C progamming"); a[1].setID(2); a[1].setPrice(20000);
     a[2].input();
     std::cin >> a[3];
-    printBookArray(a, n);
 
-    std::array<book,n> arr;
-    for (int i = 0; i < arr.size() ; ++i) // for 
+    printBookArray(a, n); // 함수 호출, 입력받은 값 출력
+
+    
+
+    std::array<book,n> arr; // arr은 배열 이름, std::array는 데이터형 정도로 인식
+    for (int i = 0; i < arr.size() ; ++i) // for로 arr에 a 할당
         arr.at(i) = a[i];
-    for (const auto& arri : arr) // for each 
+    for (const auto& arri : arr) // for each로 arr 출력
         arri.print();
     return 0;
 }
